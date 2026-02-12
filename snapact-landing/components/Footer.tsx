@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
         <footer className="w-full py-12 border-t border-white/5 bg-[#0A0A0A] relative z-10">
@@ -23,7 +25,13 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-6 self-end md:self-auto">
+                <div className="flex flex-col md:flex-row items-center gap-6 self-end md:self-auto">
+                    <Link href="/terms" className="text-sm text-gray-500 hover:text-white transition-colors">
+                        이용약관
+                    </Link>
+                    <Link href="/privacy" className="text-sm text-gray-500 hover:text-white transition-colors">
+                        개인정보처리방침
+                    </Link>
                     <p className="text-sm text-gray-600">
                         © {new Date().getFullYear()} SnapAct. All rights reserved.
                     </p>
