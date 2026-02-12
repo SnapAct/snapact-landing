@@ -27,10 +27,10 @@ export default function Footer() {
 
                 <div className="flex flex-col md:flex-row items-center gap-6 self-end md:self-auto">
                     <Link href="/terms" className="text-sm text-gray-500 hover:text-white transition-colors">
-                        이용약관
+                        Terms of Service
                     </Link>
                     <Link href="/privacy" className="text-sm text-gray-500 hover:text-white transition-colors">
-                        개인정보처리방침
+                        Privacy Policy
                     </Link>
                     <p className="text-sm text-gray-600">
                         © {new Date().getFullYear()} SnapAct. All rights reserved.

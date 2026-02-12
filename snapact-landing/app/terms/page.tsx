@@ -17,7 +17,7 @@ export default function TermsPage() {
                             <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Home
                         </Link>
                         <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 tracking-tight">
-                            서비스 이용약관
+                            Terms of Service
                         </h1>
                         <p className="text-gray-500">시행일자: 2026년 2월 5일</p>
                     </div>

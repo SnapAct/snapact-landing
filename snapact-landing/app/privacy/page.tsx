@@ -17,7 +17,7 @@ export default function PrivacyPage() {
                             <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Home
                         </Link>
                         <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 tracking-tight">
-                            개인정보처리방침
+                            Privacy Policy
                         </h1>
                         <p className="text-gray-500">최근 업데이트: 2026년 2월 5일</p>
                     </div>
