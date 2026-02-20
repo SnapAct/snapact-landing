@@ -172,50 +172,109 @@ export default function PrivacyPage() {
                         </section>
 
                         <section>
-                            <h2 className="text-2xl font-display font-bold text-white mb-6">제 5장. 개인정보 처리의 위탁 및 국외 이전</h2>
-                            <p className="mb-4">
-                                회사는 개인정보의 처리와 관련하여 아래와 같이 업무를 위탁하고 있으며, 관계법령에 따라 위탁 처리되는 개인정보가 안전하게 관리될 수 있도록 필요한 조치를 다하고 있습니다. 위탁 처리하는 정보는 서비스 제공에 필요한 최소한의 범위에 국한되고, 모두 암호화되어 제공됩니다.
-                            </p>
-                            <p className="mb-6">
-                                회사에서 위탁 처리되고 있는 업무와 수탁 업체는 아래와 같습니다. 서비스 제공 목적 및 이용자 편의 증진을 위하여 국외 업체에 위탁, 보관하고 있으며 서비스 이용 시점에 네트워크를 통해 전송됩니다.
-                            </p>
-
-                            <div className="overflow-x-auto">
-                                <table className="w-full border-collapse border border-white/10 text-sm">
-                                    <thead>
-                                        <tr className="bg-white/5">
-                                            <th className="border border-white/10 px-4 py-3 text-left">이전 받는 자</th>
-                                            <th className="border border-white/10 px-4 py-3 text-left">이전되는 국가</th>
-                                            <th className="border border-white/10 px-4 py-3 text-left">이용 목적</th>
-                                            <th className="border border-white/10 px-4 py-3 text-left">이전되는 개인정보 항목</th>
-                                            <th className="border border-white/10 px-4 py-3 text-left">보유 및 이용 기간</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="text-xs">
-                                        {[
-                                            { name: "Google Analytics", country: "미국", purpose: "서비스 이용에 대한 데이터 처리", items: "서비스 이용 기록 또는 수집된 개인정보", period: "회원 탈퇴시까지" },
-                                            { name: "Firebase", country: "미국", purpose: "서비스 이용에 대한 데이터 처리", items: "서비스 이용 기록 또는 수집된 개인정보", period: "회원 탈퇴시까지" },
-                                            { name: "Amplitude", country: "미국", purpose: "사용자의 서비스 이용에 대한 통계 분석", items: "서비스 이용 기록", period: "회원 탈퇴시까지" },
-                                            { name: "appsflyer", country: "미국", purpose: "사용자의 서비스 이용에 대한 통계 분석", items: "서비스 이용 기록", period: "회원 탈퇴시까지" },
-                                            { name: "mixpanel", country: "미국", purpose: "사용자의 서비스 이용에 대한 통계 분석", items: "서비스 이용 기록", period: "회원 탈퇴시까지" },
-                                            { name: "Facebook", country: "미국", purpose: "타겟 고객군 대상 마케팅", items: "암호화된 개별 UID", period: "회원 탈퇴시까지" },
-                                            { name: "Tiktok", country: "미국", purpose: "타겟 고객군 대상 마케팅", items: "암호화된 개별 UID", period: "회원 탈퇴시까지" },
-                                            { name: "Google Ads", country: "미국", purpose: "타겟 고객군 대상 마케팅", items: "암호화된 개별 UID", period: "회원 탈퇴시까지" },
-                                            { name: "Twitter", country: "미국", purpose: "타겟 고객군 대상 마케팅", items: "암호화된 개별 UID", period: "회원 탈퇴시까지" },
-                                            { name: "Amazon Web service", country: "미국", purpose: "데이터 처리 및 저장", items: "서비스 이용 기록 또는 수집된 개인정보", period: "회원 탈퇴시까지" },
-                                        ].map((item, idx) => (
-                                            <tr key={idx}>
-                                                <td className="border border-white/10 px-4 py-3 font-bold">{item.name}</td>
-                                                <td className="border border-white/10 px-4 py-3">{item.country}</td>
-                                                <td className="border border-white/10 px-4 py-3">{item.purpose}</td>
-                                                <td className="border border-white/10 px-4 py-3">{item.items}</td>
-                                                <td className="border border-white/10 px-4 py-3">{item.period}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p className="mt-4 text-sm text-gray-500 text-center">위탁사항이 변경되는 경우, 본 개인정보처리방침을 통하여 해당 사실을 알려드리겠습니다.</p>
+                                <h2 className="text-2xl font-display font-bold text-white mb-6">제 5장. 개인정보 처리의 위탁 및 국외 이전</h2>
+                                <p className="mb-4">
+                                    회사는 개인정보의 처리와 관련하여 아래와 같이 업무를 위탁하고 있으며, 관계법령에 따라 위탁 처리되는 개인정보가 안전하게 관리될 수 있도록 필요한 조치를 다하고 있습니다.
+                                </p>
+                                <div className="space-y-6 mb-6">
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white mb-2">1. Google 사용자 데이터의 보호 및 공유 제한</h3>
+                                        <ul className="list-disc pl-6 space-y-2 text-gray-400">
+                                            <li><strong>회사는 Google OAuth API를 통해 액세스한 사용자 데이터를 제3자에게 판매하거나, 광고 목적으로 사용하지 않습니다.</strong></li>
+                                            <li><strong>회사는 이용자의 명시적인 동의가 있거나 법령에 규정된 경우를 제외하고는 Google 사용자 데이터를 외부로 공유, 이전 또는 공개하지 않습니다.</strong></li>
+                                            <li><strong>다만, 서비스 기능 제공을 위해 필요한 최소한의 범위 내에서 아래와 같이 기술적 파트너(AWS 등)에게 수탁 처리를 맡길 수 있으며, 이 경우에도 데이터는 암호화되어 안전하게 관리됩니다.</strong></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-white mb-2">2. 업무 위탁 및 국외 이전 현황</h3>
+                                        <div className="overflow-x-auto">
+                                            <table className="w-full border-collapse border border-white/10 text-sm">
+                                                <thead>
+                                                    <tr className="bg-white/5">
+                                                        <th className="border border-white/10 px-4 py-3 text-left">이전 받는 자</th>
+                                                        <th className="border border-white/10 px-4 py-3 text-left">이전되는 국가</th>
+                                                        <th className="border border-white/10 px-4 py-3 text-left">이용 목적</th>
+                                                        <th className="border border-white/10 px-4 py-3 text-left">이전되는 개인정보 항목</th>
+                                                        <th className="border border-white/10 px-4 py-3 text-left">보유 및 이용 기간</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody className="text-xs">
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">Google Analytics</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">서비스 이용에 대한 데이터 처리</td>
+                                                        <td className="border border-white/10 px-4 py-3">서비스 이용 기록 또는 수집된 개인정보</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">Firebase</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">서비스 이용에 대한 데이터 처리</td>
+                                                        <td className="border border-white/10 px-4 py-3">서비스 이용 기록 또는 수집된 개인정보</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">Amplitude</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">사용자의 서비스 이용에 대한 통계 분석</td>
+                                                        <td className="border border-white/10 px-4 py-3">서비스 이용 기록</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">appsflyer</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">사용자의 서비스 이용에 대한 통계 분석</td>
+                                                        <td className="border border-white/10 px-4 py-3">서비스 이용 기록</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">mixpanel</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">사용자의 서비스 이용에 대한 통계 분석</td>
+                                                        <td className="border border-white/10 px-4 py-3">서비스 이용 기록</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">Facebook</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">타겟 고객군 대상 마케팅</td>
+                                                        <td className="border border-white/10 px-4 py-3">암호화된 개별 UID</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">Tiktok</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">타겟 고객군 대상 마케팅</td>
+                                                        <td className="border border-white/10 px-4 py-3">암호화된 개별 UID</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">Google Ads</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">타겟 고객군 대상 마케팅</td>
+                                                        <td className="border border-white/10 px-4 py-3">암호화된 개별 UID</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">Twitter</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">타겟 고객군 대상 마케팅</td>
+                                                        <td className="border border-white/10 px-4 py-3">암호화된 개별 UID</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className="border border-white/10 px-4 py-3 font-bold">Amazon Web service</td>
+                                                        <td className="border border-white/10 px-4 py-3">미국</td>
+                                                        <td className="border border-white/10 px-4 py-3">데이터 처리 및 저장</td>
+                                                        <td className="border border-white/10 px-4 py-3">서비스 이용 기록 또는 수집된 개인정보</td>
+                                                        <td className="border border-white/10 px-4 py-3">회원 탈퇴시까지</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p className="mt-4 text-sm text-gray-500 text-center">위탁사항이 변경되는 경우, 본 개인정보처리방침을 통하여 해당 사실을 알려드리겠습니다.</p>
                         </section>
 
                         <section>
